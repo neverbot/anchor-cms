@@ -175,7 +175,7 @@ Route::get(array('rss', 'feeds/rss'), function() {
 		$rss->item(
 			$article->title,
 			Uri::full(Registry::get('posts_page')->slug . '/' . $article->slug),
-			'<![CDATA[' . $article->html . ']]>',
+			$article->html,
 			$article->created
 		);
 	}
