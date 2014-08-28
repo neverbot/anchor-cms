@@ -67,6 +67,7 @@ function total_articles() {
 	return Post::where(Base::table('posts.status'), '=', 'published')->count();
 }
 
-function article_number($time = 0) {
-	return Post::where(Base::table('posts.status'), '=', 'published')->where(Base::table('posts.created'), '<=', $time)->count();
+function article_number($id = 0) {
+	return Post::where(Base::table('posts.status'), '=', 'published')->
+				where(Base::table('posts.id'), '<=', $id)->count();
 }
